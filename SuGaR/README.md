@@ -13,6 +13,7 @@ Then, build the container
 ```sh
 sudo docker build -t kevin:sugar .
 
+# Run the container w/ access to your display
 xhost +local:docker
 sudo docker run -it --name sugar --gpus all --privileged --network host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix kevin:sugar
 ```
